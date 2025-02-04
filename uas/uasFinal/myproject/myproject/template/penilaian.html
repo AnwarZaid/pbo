@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdzFreelance - Penilaian dan Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        .container {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .feedback-card {
+            width: 80%;
+            background: #d6b3ff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin: 1rem 0;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .feedback-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .feedback-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        .rating {
+            display: flex;
+            gap: 5px;
+        }
+        .star {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+        .star:hover, .star.selected {
+            color: gold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 1px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            resize: none;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #2575fc;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #1a5db8;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Penilaian dan Feedback</h1>
+</header>
+
+<div class="container">
+    <div class="feedback-card">
+        <h3>Freelancer: John Doe</h3>
+        <p>Proyek: Website Portfolio</p>
+        <div class="rating">
+            <span class="star" onclick="rate(1)">&#9733;</span>
+            <span class="star" onclick="rate(2)">&#9733;</span>
+            <span class="star" onclick="rate(3)">&#9733;</span>
+            <span class="star" onclick="rate(4)">&#9733;</span>
+            <span class="star" onclick="rate(5)">&#9733;</span>
+        </div>
+        <textarea placeholder="Tulis ulasan Anda..."></textarea>
+        <button>Kirim Ulasan</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; iDZ COMPANY LIMITED</p>
+</footer>
+
+<script>
+    function rate(stars) {
+        let allStars = document.querySelectorAll('.star');
+        allStars.forEach((star, index) => {
+            if (index < stars) {
+                star.classList.add('selected');
+            } else {
+                star.classList.remove('selected');
+            }
+        });
+    }
+</script>
+</body>
+</html>

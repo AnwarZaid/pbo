@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdzFreelance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+
+        header input {
+            width: 40%;
+            padding: 0.6rem;
+            border: none;
+            border-radius: 9px;
+            outline: none;
+        }
+
+        .container {
+            flex: 1;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: fadeIn 0.8s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            color: white;
+        }
+
+        .card a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3, .card p {
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            }
+            .card {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header input {
+                width: 80%;
+                margin-top: 1rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .card {
+                padding: 1rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            width: 100%;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>IDZFREELANCE</h1>
+    <h2>by Zaid Anwar</h2>
+    <input type="search" placeholder="Cari freelancer atau proyek...">
+</header>
+
+<div class="container">
+    <div class="card">
+        <a href="buat_proyek/"> <!-- Updated link -->
+            <h3>BUAT PROYEK</h3>
+            <p>Deskripsikan proyek Anda, tentukan tenggat waktu dan anggaran.</p>
+        </a>
+    </div>
+    <div class="card">
+        <a href="cari_freelancer.html">
+            <h3>CARI FREELANCER</h3>
+            <p>Temukan freelancer dengan keahlian yang sesuai untuk proyek Anda.</p>
+        </a>
+    </div>
+    <div class="card">
+        <a href="kelola.html">
+            <h3>KELOLA PROYEK</h3>
+            <p>Lacak progres proyek, komunikasi, dan pembayaran dengan freelancer.</p>
+        </a>
+    </div>
+    <div class="card">
+        <a href="penilaian.html">
+            <h3>PENILAIAN DAN FEEDBACK</h3>
+            <p>Berikan rating dan ulasan terhadap hasil kerja freelancer.</p>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; iDZ COMPANY LIMITED</p>
+</footer>
+</body>
+</html>

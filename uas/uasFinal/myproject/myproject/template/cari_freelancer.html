@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdzFreelance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        header input {
+            width: 40%;
+            padding: 0.6rem;
+            border: none;
+            border-radius: 9px;
+            outline: none;
+        }
+        .container {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 280px;
+            background: #d6b3ff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            margin: 1rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        .card p {
+            font-size: 0.9rem;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .form-container {
+            width: 50%;
+            margin: 2rem auto;
+            background: white;
+            color: royalblue;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .form-container input, .form-container select, .form-container button {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.8rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            background: #6a11cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .form-container button:hover {
+            background: #2575fc;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>Cari Freelancer</h2>
+    <form>
+        <label for="skill">Keahlian yang Dibutuhkan:</label>
+        <select id="skill" name="skill" required>
+            <option value="web">Website Development</option>
+            <option value="design">Desain Grafis</option>
+            <option value="seo">SEO Optimization</option>
+            <option value="marketing">Social Media Marketing</option>
+            <option value="voice">Voice Over</option>
+        </select>
+        
+        <label for="experience">Pengalaman Minimal:</label>
+        <select id="experience" name="experience" required>
+            <option value="junior">Junior (0-2 tahun)</option>
+            <option value="mid">Mid-Level (2-5 tahun)</option>
+            <option value="senior">Senior (5+ tahun)</option>
+        </select>
+        
+        <label for="budget">Anggaran (IDR):</label>
+        <input type="number" id="budget" name="budget" placeholder="Masukkan anggaran Anda" required>
+        
+        <button type="submit">Cari Freelancer</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; iDZ COMPANY LIMITED</p>
+</footer>
+</body>
+</html>
